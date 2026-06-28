@@ -1889,13 +1889,13 @@
     /* Hero */
     .hero {
       min-height: 90vh;
-      padding: 120px 20px 80px;
-      /* スマホでは柄を拡大クロップせず、一定スケールでタイル表示にして崩れを防ぐ */
-      background-size: 460px auto;
-      background-repeat: repeat;
-      background-position: top center;
+      padding: 110px 20px 96px;
+      /* 柄が全面を覆うようにcover。テキストは常に柄の上に乗る */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    .hero-content { padding: 20px 12px; }
+    .hero-content { padding: 16px 12px; }
     .hero h1 {
       font-size: clamp(22px, 6.6vw, 28px);
       line-height: 1.7;
@@ -1924,6 +1924,8 @@
     .philosophy-vision p { font-size: 15px; }
     .philosophy-mission-credos { gap: 40px; }
     .philosophy-hero-text .vision-label { font-size: 15px; }
+    /* 「心の中にずっと浸透し続ける」を1行に収め、続けるの後で改行 */
+    .philosophy-hero-text p:not(.vision-label) { font-size: clamp(19px, 5.4vw, 24px); line-height: 1.7; }
     .philosophy-block .block-label { font-size: 15px; }
     .philosophy-block p { font-size: 20px; }
     .philosophy-block ul li { font-size: 20px; }
@@ -1970,13 +1972,14 @@
 
     /* Contact CTA */
     .contact-cta {
-      padding: 80px 20px;
-      background-size: 460px auto;
-      background-repeat: repeat;
-      background-position: top center;
+      padding: 72px 20px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
+    .contact-cta .cta-door { max-width: 130px; margin-bottom: 16px; }
     .contact-cta .cta-title { font-size: 24px; }
-    .contact-cta .cta-sub { font-size: 13px; }
+    .contact-cta .cta-sub { font-size: 12px; letter-spacing: 0.02em; line-height: 2.0; }
     .contact-cta .cta-sub br { display: none; }
     .cta-btn { padding: 16px 36px; font-size: 13px; }
 
@@ -2255,7 +2258,7 @@
 <section class="contact-cta" id="contact">
   <img class="cta-door fade-in" src="images/door.png" alt="ドア（Little Doors）" loading="lazy">
   <h2 class="cta-title fade-in">ドアをたたく</h2>
-  <p class="cta-sub fade-in"><span class="nobreak">ブランドやキャラクターに関するお悩みやご相談、</span><span class="nobreak">お仕事のご依頼など、まずはお気軽にお問い合わせください。</span></p>
+  <p class="cta-sub fade-in"><span class="nobreak">ブランドやキャラクターに関するお悩みやご相談、</span><span class="nobreak">お仕事のご依頼など、</span><span class="nobreak">まずはお気軽にお問い合わせください。</span></p>
   <!-- TODO: メールアドレスを実運用のものに差し替え -->
   <a href="mailto:contact@littledoors.jp?subject=Little%20Doors%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="cta-btn fade-in" aria-label="メールでお問い合わせ">
     CONTACT US <span class="arrow">→</span>
