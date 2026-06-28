@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile｜Little Doors</title>
+<meta name="description" content="Little Doors代表 薮田美和のプロフィール詳細。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #FEF5F4;
+    --bg-white: #FFFFFF;
+    --text-navy: #002060;
+    --text-navy-light: rgba(0,32,96,0.6);
+    --text-navy-muted: rgba(0,32,96,0.4);
+    --brand-rose: #CE3A64;
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    background: var(--bg-primary);
+    color: var(--text-navy);
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .subpage-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg-primary);
+    box-shadow: 0 1px 0 rgba(0,32,96,0.06);
+    padding: 0 40px;
+  }
+  .subpage-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+  }
+  .subpage-nav-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    color: var(--text-navy);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .back-link {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-navy);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .back-link:hover { color: var(--brand-rose); }
+  .back-link .arrow {
+    display: inline-block;
+    margin-right: 6px;
+    transition: transform var(--transition);
+  }
+  .back-link:hover .arrow { transform: translateX(-4px); }
+  .subpage-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 160px 40px 120px;
+  }
+  .section-title {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--text-navy);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .section-line {
+    width: 40px;
+    height: 1px;
+    background: var(--brand-rose);
+    opacity: 0.5;
+    margin-bottom: 64px;
+  }
+  .profile-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 64px;
+    align-items: flex-start;
+  }
+  .profile-photo {
+    width: 240px;
+    height: 300px;
+    background: var(--bg-primary);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    display: block;
+  }
+  .profile-text h3 {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+    color: var(--text-navy);
+  }
+  .profile-brand {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--text-navy-light);
+    margin-bottom: 4px;
+  }
+  .profile-role {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--text-navy-light);
+    margin-bottom: 24px;
+  }
+  .profile-creds {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+  .profile-creds li {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--text-navy-light);
+    line-height: 1.8;
+    padding-left: 14px;
+    position: relative;
+  }
+  .profile-creds li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--brand-rose);
+    font-weight: 700;
+  }
+  .profile-bio {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 2.0;
+    color: var(--text-navy);
+    margin-bottom: 20px;
+  }
+  .bottom-back {
+    text-align: center;
+    margin-top: 96px;
+  }
+  @media (max-width: 900px) {
+    .subpage-main { padding: 120px 32px 80px; }
+    .profile-layout { grid-template-columns: 1fr; gap: 32px; justify-items: center; }
+    .profile-photo { width: 220px; height: 270px; }
+    .profile-text { width: 100%; }
+  }
+  @media (max-width: 600px) {
+    .subpage-main { padding: 100px 20px 64px; }
+    .section-title { font-size: 26px; }
+    .profile-text h3 { font-size: 22px; }
+    .profile-bio { font-size: 13px; }
+    .subpage-nav { padding: 0 16px; }
+    .subpage-nav-inner { height: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="subpage-nav">
+  <div class="subpage-nav-inner">
+    <a href="index.html" class="subpage-nav-logo">Little Doors</a>
+    <a href="index.html" class="back-link"><span class="arrow">←</span> back to top</a>
+  </div>
+</nav>
+
+<main class="subpage-main">
+  <h1 class="section-title">Profile</h1>
+  <div class="section-line"></div>
+
+  <div class="profile-layout">
+    <div class="profile-photo">
+      <img src="images/profile-yabuta.jpg" alt="薮田美和 プロフィール写真" loading="lazy">
+    </div>
+    <div class="profile-text">
+      <h3>薮田 美和</h3>
+      <p class="profile-brand">Little Doors</p>
+      <p class="profile-role">ブランド／キャラクターコンサルタント</p>
+      <ul class="profile-creds">
+        <li>INPIT(経済産業省・特許庁所管)認定 ブランド専門家</li>
+        <li>一般財団法人ブランド・マネージャー認定協会 2級資格</li>
+        <li>神奈川県商工会連合会 小規模企業支援強化事業・登録専門家（コーディネーター）</li>
+      </ul>
+      <p class="profile-bio">大手テーマパーク運営会社にて18年間、キャラクターやキャラクターグッズの企画・開発に従事。キャラクターの世界観設計からグッズ開発、体験イベント、プロモーション施策まで一貫して携わり、キャラクターを継続的に育てるブランドづくりに取り組んできました。担当プロジェクトでは、キャラクターの世界観を起点に商品や体験へと展開を広げていくことで、長く愛されるブランドの基盤を形成しました。</p>
+      <p class="profile-bio">独立後は、個人事業主から企業まで幅広い領域でブランディング支援に携わり、ブランド構築、商品企画、広報、クリエイティブディレクションなどを行っています。エステサロンや教室事業のブランディング支援、化粧品メーカーのクリエイティブディレクション、地域企業の商品企画・広報支援などを手がけてきました。</p>
+      <p class="profile-bio">また、キャラクターを活用したブランディング支援にも強みを持ち、企業や事業におけるキャラクターの企画・開発をはじめ、世界観の設計や活用方法の提案など幅広く携わっています。</p>
+      <p class="profile-bio">ブランドやキャラクターは「つくって終わり」ではなく、「育てていくもの」です。進むべき方向性を整理し、商品・サービス、体験、コミュニケーションへと展開を広げていきながら、ブランドやキャラクターを継続的に育てていくプランを設計していきます。</p>
+    </div>
+  </div>
+
+  <div class="bottom-back">
+    <a href="index.html" class="back-link"><span class="arrow">←</span> back to top</a>
+  </div>
+</main>
+
+</body>
+</html>
