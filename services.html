@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services｜Little Doors</title>
+<meta name="description" content="Little Doorsのサービス詳細。お困りごと・成果・プロセスをご紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #FEF5F4;
+    --bg-white: #FFFFFF;
+    --text-navy: #002060;
+    --text-navy-light: rgba(0,32,96,0.6);
+    --text-navy-muted: rgba(0,32,96,0.4);
+    --brand-rose: #CE3A64;
+    --accent-coral: #F6A58D;
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    background: var(--bg-primary);
+    color: var(--text-navy);
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .subpage-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg-primary);
+    box-shadow: 0 1px 0 rgba(0,32,96,0.06);
+    padding: 0 40px;
+  }
+  .subpage-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+  }
+  .subpage-nav-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    color: var(--text-navy);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+  }
+  .subpage-nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+  .back-link {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-navy);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .back-link:hover { color: var(--brand-rose); }
+  .back-link .arrow {
+    display: inline-block;
+    margin-right: 6px;
+    transition: transform var(--transition);
+  }
+  .back-link:hover .arrow { transform: translateX(-4px); }
+  .subpage-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 160px 40px 120px;
+  }
+  .section-label {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-navy-muted);
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--text-navy);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .section-line {
+    width: 40px;
+    height: 1px;
+    background: var(--brand-rose);
+    opacity: 0.5;
+    margin-bottom: 64px;
+  }
+  .service-lead {
+    max-width: 760px;
+    margin: 0 0 80px;
+  }
+  .service-lead p {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 2.2;
+    color: var(--text-navy);
+  }
+  .service-twocol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 80px;
+  }
+  .service-col {
+    background: var(--bg-white);
+    border-radius: 24px;
+    box-shadow: 0 2px 16px rgba(0,32,96,0.04);
+    padding: 48px 40px;
+  }
+  .service-col-label {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brand-rose);
+    margin-bottom: 20px;
+  }
+  .service-col-title {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    min-height: 3em;
+    color: var(--text-navy);
+  }
+  .service-col ul { list-style: none; }
+  .service-col li {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.85;
+    padding: 12px 0 12px 22px;
+    border-bottom: 1px solid rgba(0,32,96,0.08);
+    position: relative;
+    color: var(--text-navy);
+  }
+  .service-col li:last-child { border-bottom: 0; }
+  .service-col li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 22px;
+    width: 10px; height: 1px;
+    background: var(--brand-rose);
+    opacity: 0.55;
+  }
+  .service-col.outcome li::before {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--brand-rose);
+    opacity: 0.5;
+    top: 18px;
+  }
+  .support-scope {
+    margin-top: 96px;
+    text-align: center;
+  }
+  .support-scope-title {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    color: var(--text-navy);
+    margin: 0 0 32px;
+  }
+  .support-scope-lead {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 2.2;
+    color: var(--text-navy);
+    max-width: 760px;
+    margin: 0 auto 56px;
+    text-align: left;
+  }
+  .support-scope img {
+    max-width: 100%;
+    width: 900px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    .support-scope-title { font-size: 22px; }
+    .support-scope-lead { font-size: 14px; }
+  }
+  .service-process {
+    margin-top: 64px;
+    text-align: center;
+  }
+  .service-process-title {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    color: var(--text-navy);
+    margin: 16px 0 56px;
+  }
+  .service-process-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    list-style: none;
+    text-align: left;
+  }
+  .service-process-list li {
+    background: var(--bg-white);
+    border-radius: 24px;
+    box-shadow: 0 2px 16px rgba(0,32,96,0.04);
+    padding: 40px 32px 110px;
+    position: relative;
+  }
+  .service-process-list .process-img {
+    position: absolute;
+    width: 90px;
+    height: auto;
+    bottom: 14px;
+    right: 14px;
+  }
+  .service-process-list .step-num {
+    display: block;
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brand-rose);
+    margin-bottom: 18px;
+  }
+  .service-process-list .step-catch {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-navy);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .service-process-list h4 {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-navy);
+    margin-bottom: 14px;
+  }
+  .service-process-list p {
+    font-size: 13px;
+    line-height: 2.0;
+    color: var(--text-navy-light);
+  }
+  .bottom-back {
+    text-align: center;
+    margin-top: 96px;
+  }
+  @media (max-width: 900px) {
+    .subpage-main { padding: 120px 32px 80px; }
+    .service-twocol { grid-template-columns: 1fr; gap: 24px; margin-top: 56px; }
+    .service-process-list { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .service-process-list li { padding: 32px 24px 120px; }
+  }
+  @media (max-width: 600px) {
+    .subpage-main { padding: 100px 20px 64px; }
+    .section-title { font-size: 26px; }
+    .service-process-list { grid-template-columns: 1fr; gap: 14px; }
+    .service-process-list li { padding: 28px 22px 110px; }
+    .subpage-nav { padding: 0 16px; }
+    .subpage-nav-inner { height: 60px; }
+    .subpage-nav-logo img { height: 38px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="subpage-nav">
+  <div class="subpage-nav-inner">
+    <a href="index.html" class="subpage-nav-logo" aria-label="Little Doors トップへ"><img src="images/LittleDoors_Logo.png" alt="Little Doors"></a>
+    <a href="index.html" class="back-link"><span class="arrow">←</span> back to top</a>
+  </div>
+</nav>
+
+<main class="subpage-main">
+  <h1 class="section-title">Services</h1>
+  <div class="section-line"></div>
+
+  <div class="service-lead">
+    <p>ブランド戦略の整理から実行支援まで、一貫して伴走します。ブランドに込められた想いや本質的な価値の深掘りから始め、「自分たちのブランドらしさ」が正しく顧客に伝わるように、世界観の表現方法、ふさわしい言葉遣い、商品展開の方向性や顧客のブランド体験のあり方などを整えていきます。中でもキャラクターを起点としたブランディングでは、キャラクターの企画・開発から商品・サービス、体験、コミュニケーションの展開までを一連の流れで支援し、ブランドが長く続いていく土壌をつくります。</p>
+  </div>
+
+  <div class="service-twocol">
+    <div class="service-col">
+      <p class="service-col-label">Problems</p>
+      <h3 class="service-col-title">このようなことにお困りではありませんか？</h3>
+      <ul>
+        <li>ブランディングと言われても、何から始めればよいかわからない</li>
+        <li>ブランドの世界観や商品の魅力を、どのように表現すればよいかわからない</li>
+        <li>ブランドのコンセプトや方向性を整理したい</li>
+        <li>他社のブランドとの差別化が難しいと感じている</li>
+        <li>ブランドの世界観に一貫性を持たせ、ブレのない展開をしていきたい</li>
+        <li>キャラクターやブランドを商品・サービスや体験に幅広く展開していきたい</li>
+        <li>キャラクターをつくりたいが、どのように考えればよいかわからない</li>
+        <li>キャラクターをつくったが、その後の展開に悩んでいる</li>
+        <li>すでにキャラクターを保有しているが、活かし方がわからず困っている</li>
+        <li>長く愛されるブランドに育てていきたい</li>
+        <li>相談しながら丁寧に進めていきたい</li>
+      </ul>
+    </div>
+    <div class="service-col outcome">
+      <p class="service-col-label">Results</p>
+      <h3 class="service-col-title">ブランディングの先にあるもの</h3>
+      <ul>
+        <li>ブランドの軸や判断基準が明確になります</li>
+        <li>「自分たちのブランドらしい表現」とは何かがわかるようになります</li>
+        <li>ブランドが表現する世界観に一貫性が生まれます</li>
+        <li>ブランドのコンセプトが商品や体験へ自然につながるようになります</li>
+        <li>キャラクターをブランドの中で活かせるようになります</li>
+        <li>ブランドを長く育てていくための基盤が整います</li>
+        <li>将来の世代にブランドが正しく継承されていきます</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="support-scope">
+    <p class="service-col-label">Our Support</p>
+    <h3 class="support-scope-title">私たちがご支援する領域</h3>
+    <p class="support-scope-lead">理念・ビジョンを核に、ブランドの本質と&ldquo;想い&rdquo;を、ブランドブックという&ldquo;指針&rdquo;へと結晶化させていきます。その指針をもとに、エクスターナル（社外）での展開とインターナル（社内）への浸透を継続的なブランディング活動として育てていく——Little Doors はその全体をひとつの物語として繋ぎ、ブランドが長く育っていくための土壌を整えます。整えた土壌を継続して育てていくこと——それこそがブランディングだと考えています。</p>
+    <img src="support-scope-diagram.png" alt="支援領域イメージ" loading="lazy">
+  </div>
+
+  <div class="service-process">
+    <p class="service-col-label">Process</p>
+    <h3 class="service-process-title">ブランディングの4つのステップ</h3>
+    <ol class="service-process-list">
+      <li>
+        <img class="process-img" src="images/rabbit.png" alt="うさぎ（Listen）" loading="lazy">
+        <span class="step-num">Step 1</span>
+        <h4>Listen</h4>
+        <p class="step-catch">想いの奥にある言葉を、時間をかけてじっくり聞かせてください。</p>
+        <p>ブランドの背景にある創業者の想いや、関わる人々が大切にしてきた価値観、これまでの歩み、そしてこれから目指したい未来。私たちはまず、対話を通じてその全てを丁寧に受け止めることから始めます。表面的なヒアリングではなく、お客さま自身もまだ言葉にできていない「核となる想い」を一緒にひもといていく時間です。</p>
+      </li>
+      <li>
+        <img class="process-img" src="images/egg.png" alt="たまご（Discover）" loading="lazy">
+        <span class="step-num">Step 2</span>
+        <h4>Discover</h4>
+        <p class="step-catch">ブランドの軸と表現すべき世界観を、一緒に見つけていきます。</p>
+        <p>お聞きした想いや言葉を整理し、ブランドの理念・ビジョンを明確にした上で、それらを貫くストーリーへと紡いでいきます。同時に、顧客理解を深め、市場や競合との関係性を把握した上で、「自分たちのブランドらしさ」とは何かを明確にしていきます。すべての判断のよりどころとなる、ブランドの核を共に発見していくフェーズです。</p>
+      </li>
+      <li>
+        <img class="process-img" src="images/flower.png" alt="花（Design）" loading="lazy">
+        <span class="step-num">Step 3</span>
+        <h4>Design</h4>
+        <p class="step-catch">言葉、キャラクター、商品、体験などを一貫した考えで整えます。</p>
+        <p>発見した「核」を、実際にお客さまに伝わる形へと翻訳していくフェーズです。メッセージ、ロゴ、キャラクター、商品設計、店舗体験、コミュニケーション、そして組織への浸透まで、あらゆる接点が一つのストーリーで貫かれた状態を目指します。すべてを統合した指針「ブランドブック」も、ここで形になります。</p>
+      </li>
+      <li>
+        <img class="process-img" src="images/duck-family.png" alt="アヒルの親子（Accompany）" loading="lazy">
+        <span class="step-num">Step 4</span>
+        <h4>Accompany</h4>
+        <p class="step-catch">育っていくあなたのブランドに、長く寄り添っていきます。</p>
+        <p>ブランディングは、つくって終わりではありません。整えた土壌に種を植え、丁寧に育てていくこと——そこからがブランドの本当の旅です。日々の判断、新しい展開、組織の変化、社会の動き、さまざまな局面で「ブランドの軸」を保ち続けるための伴走をします。長く愛され、世代を超えて続いていくブランドへ。</p>
+      </li>
+    </ol>
+  </div>
+
+  <div class="bottom-back">
+    <a href="index.html#service" class="back-link"><span class="arrow">←</span> back to Services</a>
+  </div>
+</main>
+
+</body>
+</html>
