@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GLCE30L24M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GLCE30L24M');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Doors｜ブランド/キャラクターコンサルティング</title>
-<link rel="icon" type="image/png" href="images/LittleDoors_Logo.png">
+<title>Little Doors — Top Page (v2)</title>
 <meta name="description" content="心の中にずっと浸透し続けるブランドを育む。Little Doorsは、ブランドが育まれる土壌をつくる、ブランド／キャラクターコンサルティングです。">
 <meta property="og:title" content="Little Doors｜ブランド／キャラクターコンサルティング">
 <meta property="og:description" content="心の中にずっと浸透し続けるブランドを育む。">
@@ -42,7 +50,7 @@
 
   /* ===== Reset & Base ===== */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: 110px; overflow-x: hidden; }
+  html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: 110px; }
   /* 固定ヘッダーとアンカージャンプの位置補正（別ページから #anchor で来た場合も含め確実に） */
   section[id] { scroll-margin-top: 110px; }
   @media (max-width: 768px) {
@@ -55,8 +63,6 @@
     line-height: 1.9;
     letter-spacing: 0.04em;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    width: 100%;
   }
 
   /* ===== Navigation ===== */
@@ -321,8 +327,6 @@
   .cta-sub .nobreak {
     display: block;
   }
-  /* スマホ専用改行：PCでは無効 */
-  .br-sp { display: none; }
   .hero-sub {
     font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
     font-size: 18px;
@@ -1907,19 +1911,13 @@
     /* Hero */
     .hero {
       min-height: 90vh;
-      padding: 110px 20px 96px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      padding: 120px 20px 80px;
     }
-    .hero-content { padding: 16px 12px; }
-    .hero h1 { font-size: clamp(22px, 6.6vw, 28px); line-height: 1.7; letter-spacing: 0.04em; }
+    .hero h1 { font-size: 28px; line-height: 1.6; letter-spacing: 0.08em; }
     .hero-sub { font-size: 14px; line-height: 2.0; letter-spacing: 0.1em; }
     .hero-sub-desc { font-size: 13px; line-height: 2.0; letter-spacing: 0.04em; }
     .hero-sub br { display: none; }
     .hero-sub-desc br { display: none; }
-    /* スマホ専用改行だけは有効化（「な」を3行目へ） */
-    .hero-sub-desc br.br-sp { display: inline; }
     .hero-label { font-size: 10px; margin-bottom: 24px; }
     .hero-scroll { display: none; }
 
@@ -1939,8 +1937,6 @@
     .philosophy-vision p { font-size: 15px; }
     .philosophy-mission-credos { gap: 40px; }
     .philosophy-hero-text .vision-label { font-size: 15px; }
-    /* 「心の中にずっと浸透し続ける」を1行に収める（るの孤立防止） */
-    .philosophy-hero-text p:not(.vision-label) { font-size: clamp(19px, 5.4vw, 24px); line-height: 1.7; }
     .philosophy-block .block-label { font-size: 15px; }
     .philosophy-block p { font-size: 20px; }
     .philosophy-block ul li { font-size: 20px; }
@@ -1986,15 +1982,9 @@
     .voice-card .voice-text { font-size: 13px; }
 
     /* Contact CTA */
-    .contact-cta {
-      padding: 72px 20px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .contact-cta .cta-door { max-width: 130px; margin-bottom: 16px; }
+    .contact-cta { padding: 80px 20px; }
     .contact-cta .cta-title { font-size: 24px; }
-    .contact-cta .cta-sub { font-size: 12px; letter-spacing: 0.02em; line-height: 2.0; }
+    .contact-cta .cta-sub { font-size: 13px; }
     .contact-cta .cta-sub br { display: none; }
     .cta-btn { padding: 16px 36px; font-size: 13px; }
 
@@ -2019,7 +2009,45 @@
   }
   .fade-in-delay { transition-delay: 0.15s; }
   .fade-in-delay-2 { transition-delay: 0.3s; }
-</style>
+
+  /* ===== note hub section ===== */
+  .note-hub {
+    padding: 120px 40px;
+    text-align: center;
+    background: var(--bg-cream, #F7F5F0);
+    position: relative;
+  }
+  .note-hub .section-title { text-align: center; }
+  .note-hub .section-line {
+    margin: 0 auto 36px;
+  }
+  .note-hub-lead {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: 16px;
+    line-height: 2.1;
+    color: var(--text-navy, #333855);
+    margin: 0 0 40px;
+    letter-spacing: 0.04em;
+  }
+  .note-hub-btn { margin-top: 4px; text-transform: none; letter-spacing: 0.12em; }
+  .note-hub-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .note-hub-logo {
+    height: 44px;
+    width: auto;
+    display: inline-block;
+  }
+  @media (max-width: 768px) {
+    .note-hub-logo { height: 34px; }
+  }
+  @media (max-width: 768px) {
+    .note-hub { padding: 80px 24px; }
+    .note-hub-lead { font-size: 14px; line-height: 1.95; }
+  }
+
+  </style>
 </head>
 <body>
 
@@ -2039,6 +2067,7 @@
       <a href="#profile">Profile</a>
       <a href="#members">Members</a>
       <a href="#works">Works</a>
+      <a href="#note">Note</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -2052,7 +2081,7 @@
 
   <div class="hero-content">
     <h1 class="fade-in fade-in-delay"><span class="nobreak">心の中に、</span><span class="nobreak">ずっと浸透し続ける</span><span class="nobreak">ブランドを育む。</span></h1>
-    <p class="hero-sub-desc fade-in fade-in-delay-2"><span class="nobreak">Little Doors は、ブランドの本質と&ldquo;想い&rdquo;を繋ぎ、</span><span class="nobreak">商品・体験・コミュニケーション・組織がひとつに<br class="br-sp">なって育っていくための</span><span class="nobreak">土壌を整えるブランディングユニットです。</span></p>
+    <p class="hero-sub-desc fade-in fade-in-delay-2"><span class="nobreak">Little Doors は、ブランドの本質と&ldquo;想い&rdquo;を繋ぎ、</span><span class="nobreak">商品・体験・コミュニケーション・組織がひとつになって育っていくための</span><span class="nobreak">土壌を整えるブランディングユニットです。</span></p>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -2262,11 +2291,29 @@
   </div>
 </section>
 
-<!-- ===== 7. CONTACT CTA ===== -->
+<!-- ===== 7. NOTE ===== -->
+<section class="note-hub" id="note">
+  <div class="section-inner">
+    <div class="note-hub-title fade-in"><img src="images/note-logo.svg" alt="note" class="note-hub-logo"></div>
+    <div class="section-line fade-in"></div>
+
+    <p class="note-hub-lead fade-in">
+      Little Doorsのメンバーが、<span class="nobreak">企業キャラクターを一体ずつ研究しています。</span><br>
+      <span class="nobreak">月2回のペースで更新中🌸</span>
+    </p>
+
+    <a href="https://note.com/littledoors" target="_blank" rel="noopener noreferrer" class="cta-btn note-hub-btn fade-in" aria-label="Little Doors のnoteを新しいタブで開く">
+      note を読む <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ===== 8. CONTACT CTA ===== -->
 <section class="contact-cta" id="contact">
   <img class="cta-door fade-in" src="images/door.png" alt="ドア（Little Doors）" loading="lazy">
   <h2 class="cta-title fade-in">ドアをたたく</h2>
-  <p class="cta-sub fade-in"><span class="nobreak">ブランドやキャラクターに関するお悩みやご相談、</span><span class="nobreak">お仕事のご依頼など、</span><span class="nobreak">まずはお気軽にお問い合わせください。</span></p>
+  <p class="cta-sub fade-in"><span class="nobreak">ブランドやキャラクターに関するお悩みやご相談、</span><span class="nobreak">お仕事のご依頼など、まずはお気軽にお問い合わせください。</span></p>
   <!-- TODO: メールアドレスを実運用のものに差し替え -->
   <a href="mailto:contact@littledoors.jp?subject=Little%20Doors%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="cta-btn fade-in" aria-label="メールでお問い合わせ">
     CONTACT US <span class="arrow">→</span>
@@ -2440,6 +2487,7 @@
       <a href="#profile">Profile</a>
       <a href="#members">Members</a>
       <a href="#works">Works</a>
+      <a href="#note">Note</a>
       <a href="#contact">Contact</a>
       <a href="#privacy" class="footer-privacy">Privacy Policy</a>
     </nav>
@@ -2593,3 +2641,4 @@
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
